@@ -2,7 +2,7 @@
 #           Game Server project build
 ######################################################
 FROM maven:3.6.1-jdk-8 as BUILD
-MAINTAINER Igor_Petrov@epam.com
+MAINTAINER Igor Petrov
 
 ENV MVN_HOME=/home/maven
 
@@ -24,7 +24,7 @@ RUN mvn clean package -D$GAMES -DskipTests
 #                 Game Server image
 ######################################################
 FROM openjdk:8 as SERVER
-MAINTAINER Igor_Petrov@epam.com
+MAINTAINER Igor Petrov
 
 ENV APP_HOME=/usr/app
 
