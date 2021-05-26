@@ -30,12 +30,6 @@ ENV APP_HOME=/usr/app
 
 ENV ARTIFACT_NAME=codenjoy-contest.war
 
-ARG PROFILES="sqlite,debug,icancode"
-ENV PROFILES=${PROFILES}
-
-ARG SERVER_CONTEXT="codenjoy-contest"
-ENV SERVER_CONTEXT=${SERVER_CONTEXT}
-
 WORKDIR $APP_HOME
 
 COPY --from=BUILD /home/maven/server/target/$ARTIFACT_NAME .
@@ -43,5 +37,3 @@ COPY --from=BUILD /home/maven/server/target/$ARTIFACT_NAME .
 EXPOSE 8080
 
 ENTRYPOINT java -jar $ARTIFACT_NAME
-
-CMD "--spring.profiles.active=${PROFILES} --context=/${SERVER_CONTEXT}"
