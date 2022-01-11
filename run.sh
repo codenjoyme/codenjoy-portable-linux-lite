@@ -64,4 +64,4 @@ docker run \
         -e SPRING_PROFILES_ACTIVE=$PROFILES \
         -v $DB_DIR:/usr/app/database \
         -p 8080:8080 \
-        dojorena/game-server:1.1.1
+        dojorena/game-server:1.1.2
