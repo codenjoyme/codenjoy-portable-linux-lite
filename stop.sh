@@ -22,28 +22,7 @@
 # #L%
 ###
 
-if [ "$EUID" -ne 0 ]; then
-    echo "[91mPlease run as root on the /srv/codenjoy folder[0m" ;
-    exit ;
-fi
+source .env
 
-HOME_DIR=$(
-  cd $(dirname "$0")
-  pwd
-)
-echo $HOME_DIR
+docker rm -f $(docker ps -q --filter ancestor=$DOCKER_IMAGE )
 
-eval_echo() {
-    to_run=$1
-    echo "[94m"
-    echo $to_run
-    echo "[0m"
-
-    eval $to_run
-}
-
-GIT_REPO=https://github.com/codenjoyme/codenjoy.git
-GIT_REVISION=master
-
-eval_echo "git clone --recursive $GIT_REPO"
-eval_echo "git checkout $GIT_REVISION"

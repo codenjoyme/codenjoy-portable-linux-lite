@@ -1,5 +1,6 @@
 Linux portable script (simple version)
 ======================
+This tutorial can be used to run Codenjoy server on MacOS, but you can do it only using Vagrant
 
 How to run server on Linux?
 ----------------------------
@@ -9,28 +10,58 @@ Other options:
 - If you want to run it on windows, you should read
 [how to run the server on Windows](https://github.com/codenjoyme/codenjoy-portable-windows.git#windows-portable-script)
 
-So lets do it together!
-- copy this sctipt [https://github.com/codenjoyme/codenjoy/blob/master/CodingDojo/portable/linux-docker/start.sh](https://github.com/codenjoyme/codenjoy/blob/master/CodingDojo/portable/linux-docker/start.sh) to your server (in the `/srv/codenjoy` folder for exapmple)
-- **be careful, you need to run everything under sudo**
-- with `1-git-clone.sh` 
-    * [optional] change `GIT_REPO=https://github.com/codenjoyme/codenjoy.git`
-    * [optional] change `GIT_REVISION=master`
-    * run it to clone project `sudo bash 1-git-clone.sh`
-- with `2-build.sh` 
-    * [optional] change `DOCKER_IMAGE=apofig/codenjoy-contest:1.1.3`
-    * run it to build project and create image `sudo bash 2-build.sh` 
-- remove folders `logs` and `database` from last running
-- with `3-start.sh`
-    * [optional] change `DOCKER_IMAGE=apofig/codenjoy-contest:1.1.3`
-    * [optional] select `SERVER_PORT=8080`
-    * [optional] change `PROFILES=sqlite,icancode`
-    * [optional] change `GAME_AI=false` to disable default AI with first player
-    * [optional] change docker container name `CONTAINER_NAME=codenjoy`
-    * [optional] change application context `CONTEXT=codenjoy-contest`
-    * change default `ADMIN_PASSWORD=admin` to be secure
-    * run it to start server `sudo bash 3-start.sh`
-- clear browser cache (old scripts can break system) or disable caching 
+
+
+### Manual
+
+If you have Docker installed on your machine, you can use the easiest way to start server.
+
+**Be careful, you need to run everything under sudo**
+
+```
+sudo bash start.sh
+```
+
+If you want to change server settings, go to .env file and change variables, then run
+
+```
+sudo bash restart.sh
+```
+
+If you want to stop the server, then run
+
+```
+sudo bash stop.sh
+```
+
+- Go to ```http://your-server:8080/codenjoy-contest/```
+
+
+That's all, enjoy
+
+### Vagrant
+
+If you want to, use Vagrant, you should install Vagrant-env plugin before
+
+```
+vagrant plugin install vagrant-env
+```
+
+Then, just run 
+
+```
+vagrant up 
+```
+
+If you want to change some settings manually, change .env file before.
+If you've already ran Vagrant, then just do 
+
+```
+vagrant reload
+```
+
+###Advice
+
+- Clear browser cache (old scripts can break system) or disable caching 
  (Chrome - `Ctrl+Shift+J`, Tab `Network`, set `Disable Cache` checkbox, then press `Ctrl+F5`)
-- go to ```http://your-server:8080/codenjoy-contest/```
-- codenjoy!   
 

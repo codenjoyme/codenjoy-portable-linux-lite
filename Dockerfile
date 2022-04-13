@@ -26,11 +26,11 @@ RUN mvn clean package -D$GAMES -DskipTests
 FROM openjdk:11 as SERVER
 LABEL maintainer="Igor Petrov"
 
-ENV APP_HOME=/usr/app
+# ENV APP_HOME=/usr/app
 
 ENV ARTIFACT_NAME=codenjoy-contest.war
 
-WORKDIR $APP_HOME
+# WORKDIR $APP_HOME
 
 COPY --from=BUILD /codenjoy/server/target/$ARTIFACT_NAME .
 
