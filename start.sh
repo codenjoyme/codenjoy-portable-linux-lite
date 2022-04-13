@@ -65,5 +65,3 @@ eval_echo "docker rm --force $CONTAINER_NAME"
 
 eval_echo "docker run -d --name $CONTAINER_NAME -e SERVER_IP=$SERVER_IP -e GAME_AI=$GAME_AI -e ADMIN_PASSWORD=$ADMIN_PASSWORD -e CONTEXT=$CONTEXT -e SPRING_PROFILES_ACTIVE=$PROFILES -v $HOME_DIR/database:/usr/app/database -p $SERVER_PORT:8080 $DOCKER_IMAGE"
 
-eval_echo "docker attach $CONTAINER_NAME"
-
