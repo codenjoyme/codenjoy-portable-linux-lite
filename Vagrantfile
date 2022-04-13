@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     cd /srv/codenjoy
 
     bash 1-git-clone.sh
-    bash 2-build.sh GAMES=$1
+    bash 2-build.sh
     bash 3-start.sh
-  ', args: ENV['GAME'], privileged: true
+  ', args: ENV['GAMES'], privileged: true
 end

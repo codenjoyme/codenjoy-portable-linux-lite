@@ -44,4 +44,4 @@ eval_echo() {
 
 DOCKER_IMAGE=apofig/codenjoy-contest:1.1.3
 
-eval_echo "docker build -f ./Dockerfile -t $DOCKER_IMAGE ."
+eval_echo "docker build --build-arg GAMES=$GAMES -f ./Dockerfile -t $DOCKER_IMAGE ."

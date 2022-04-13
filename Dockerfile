@@ -2,13 +2,13 @@
 #           Game Server project build
 ######################################################
 FROM maven:3.6.3-openjdk-11 as BUILD
-LABEL maintainer=Igor Petrov
+LABEL maintainer="Igor Petrov"
 
 # comma-separated list of games or 'allGames'
 # TODO for all games sould be -P parameter in 'mvn clean package' command
-ENV GAMES=allGames
+ARG GAMES
 
-WORKDIR codenjoy
+WORKDIR /codenjoy
 
 COPY ./codenjoy/CodingDojo/games ./games
 COPY ./codenjoy/CodingDojo/server ./server
@@ -24,7 +24,7 @@ RUN mvn clean package -D$GAMES -DskipTests
 #                 Game Server image
 ######################################################
 FROM openjdk:11 as SERVER
-LABEL maintainer=Igor Petrov
+LABEL maintainer="Igor Petrov"
 
 ENV APP_HOME=/usr/app
 
