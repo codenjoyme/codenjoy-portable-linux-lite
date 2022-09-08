@@ -42,8 +42,8 @@ eval_echo() {
     eval $to_run
 }
 
-GIT_REPO=https://github.com/codenjoyme/codenjoy.git
-GIT_REVISION=master
+eval_echo "GIT_REPO=https://github.com/codenjoyme/codenjoy.git"
+eval_echo "GIT_REVISION=master"
 
 eval_echo "git clone --recursive $GIT_REPO"
 eval_echo "git checkout $GIT_REVISION"

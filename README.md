@@ -10,7 +10,7 @@ Other options:
 [how to run the server on Windows](https://github.com/codenjoyme/codenjoy-portable-windows.git#windows-portable-script)
 
 So lets do it together!
-- copy this sctipt [https://github.com/codenjoyme/codenjoy/blob/master/CodingDojo/portable/linux-docker/start.sh](https://github.com/codenjoyme/codenjoy/blob/master/CodingDojo/portable/linux-docker/start.sh) to your server (in the `/srv/codenjoy` folder for exapmple)
+- copy this sctipt [https://github.com/codenjoyme/codenjoy-portable-linux-lite](https://github.com/codenjoyme/codenjoy-portable-linux-lite) to your server (in the `/srv/codenjoy` folder for example)
 - **be careful, you need to run everything under sudo**
 - with `1-git-clone.sh` 
     * [optional] change `GIT_REPO=https://github.com/codenjoyme/codenjoy.git`

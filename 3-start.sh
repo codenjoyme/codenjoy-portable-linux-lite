@@ -42,13 +42,13 @@ eval_echo() {
     eval $to_run
 }
 
-DOCKER_IMAGE=apofig/codenjoy-contest:1.1.3
-CONTEXT=/codenjoy-contest
-SERVER_PORT=8080
-PROFILES=sqlite,icancode
-GAME_AI=true
-ADMIN_PASSWORD=admin
-CONTAINER_NAME=codenjoy
+eval_echo "DOCKER_IMAGE=apofig/codenjoy-contest:1.1.3"
+eval_echo "CONTEXT=/codenjoy-contest"
+eval_echo "SERVER_PORT=8080"
+eval_echo "PROFILES=sqlite,icancode"
+eval_echo "GAME_AI=true"
+eval_echo "ADMIN_PASSWORD=admin"
+eval_echo "CONTAINER_NAME=codenjoy"
 
 eval_echo "mkdir $HOME_DIR/logs"
 eval_echo "chown $JETTY_PID:$JETTY_PID $HOME_DIR/logs"
